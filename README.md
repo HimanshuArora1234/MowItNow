@@ -47,3 +47,9 @@ On attend le résultat suivant (position finale des tondeuses) :
 5 1 E
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
+
+##Technical env used
+
+    - Scala version 2.11
+    - SBT(Scala build tool) version 0.13.8
+    
