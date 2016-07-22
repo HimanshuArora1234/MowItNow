@@ -25,12 +25,12 @@ class TondeuseService {
 			}
 		}
 	}
-	//Helper function to return the tuple of directions obtained by rotating 90 deg left and right from current direction
+	//Helper function to return the tuple of directions obtained by rotating the tondeuse 90 deg left and right from current direction
 	private def leftRight(currentDirection: Direction.Value): (Direction.Value, Direction.Value) = currentDirection match {
 		case Direction.N => (Direction.W, Direction.E)
 		case Direction.E => (Direction.N, Direction.S)
 		case Direction.S => (Direction.E, Direction.W)
-		case Direction.W => (Direction.N, Direction.S)
+		case Direction.W => (Direction.S, Direction.N)
 	}
 	//Computes the new coordinates using the current coordiante and direction of tondeuse
 	private def computeCoordinates(currentCoordinates: Coordonnees, currentDirection: Direction.Value): Coordonnees = currentDirection match {
