@@ -16,7 +16,7 @@ object Run extends App {
 
 	val tendeuse2 = Tondeuse(Coordonnees(3, 3), Direction.E)
 	val commands2: Seq[Commande.Value] = Seq(Commande.A, Commande.A, Commande.D, Commande.A, Commande.A, Commande.D, Commande.A, Commande.D, Commande.D, Commande.A)
-	val updatesTondeuse2 = commands2.foldLeft(tendeuse1)((accumulator, command)  => tondesueService.moveTondeuse(accumulator, pelouse, command))
+	val updatesTondeuse2 = commands2.foldLeft(tendeuse2)((accumulator, command)  => tondesueService.moveTondeuse(accumulator, pelouse, command))
 	println("New position of tondeuse2 = " + updatesTondeuse2)
 
 }
