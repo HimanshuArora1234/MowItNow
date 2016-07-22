@@ -1,7 +1,6 @@
 # MowItNow
 
 ##Problem definition
-<br/>
 
 La société MowItNow a décidé de développer une tondeuse à gazon automatique, destinée aux surfaces rectangulaires.La tondeuse peut être programmée pour parcourir l&#39;intégralité de la surface.La position de la tondeuse est représentée par une combinaison de coordonnées (x,y) et d&#39;une lettre indiquant l&#39;orientation selon la notation cardinale anglaise (N,E,W,S). La pelouse est divisée en grille pour simplifier la navigation.
 
@@ -37,19 +36,14 @@ TEST
 Le fichier suivant est fourni en entrée :
 
 5 5
-
 1 2 N
-
 GAGAGAGAA
-
 3 3 E
-
 AADAADADDA
 
 On attend le résultat suivant (position finale des tondeuses) :
 
 1 3 N
-
 5 1 E
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
