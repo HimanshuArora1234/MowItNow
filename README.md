@@ -35,15 +35,15 @@ TEST
 
 Le fichier suivant est fourni en entrée :
 
-5 5
-1 2 N
-GAGAGAGAA
-3 3 E
-AADAADADDA
+5 5<br/>
+1 2 N<br/>
+GAGAGAGAA<br/>
+3 3 E<br/>
+AADAADADDA<br/>
 
 On attend le résultat suivant (position finale des tondeuses) :
 
-1 3 N
+1 3 N<br/>
 5 1 E
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
