@@ -30,7 +30,7 @@ Lorsqu&#39;une tondeuse achève une série d&#39;instruction, elle communique sa p
 
 **OBJECTIF**
 
-Concevoir et écrire un programme s&#39;exécutant sur une JVM ? 1.7 ou un serveur node.js, et implémentant la spécification ci-dessus et passant le test ci-après
+Concevoir et écrire un programme s&#39;exécutant sur une JVM >= 1.7 ou un serveur node.js, et implémentant la spécification ci-dessus et passant le test ci-après
 
 TEST
 
@@ -52,4 +52,4 @@ On attend le résultat suivant (position finale des tondeuses) :
 
 5 1 E
 
-NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (parexemple un test automatisé).
+NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
