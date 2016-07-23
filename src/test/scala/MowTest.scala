@@ -12,8 +12,8 @@ class MowTest {
 	 * 5 5
 	 * 1 2 N
 	 * GAGAGAGAA
-   * 3 3 E
-   * AADAADADDA
+   	 * 3 3 E
+   	 * AADAADADDA
 	 */
 	@Test def testCase() = {
 		val tondesueService = new TondeuseService
