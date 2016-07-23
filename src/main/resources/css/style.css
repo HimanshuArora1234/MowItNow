@@ -1,4 +1,10 @@
-.root {
+#root {
     -fx-background-image: url("http://www.trinitymowers.com.au/public/upload/media/en/Lawn-Mower-Repairs.jpg");
-    -fx-opacity: 0.5
+}
+#link {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 30px;
+    -fx-text-fill: yellow;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
 }
