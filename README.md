@@ -52,4 +52,5 @@ NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un f
 
     - Scala version 2.11
     - SBT(Scala build tool) version 0.13.8
+    - Scalafx (GUI library based on JavaFx) version 8.0.92-R10
     
