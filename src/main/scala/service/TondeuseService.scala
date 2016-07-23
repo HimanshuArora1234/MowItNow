@@ -1,5 +1,7 @@
 package service
 
+import java.util.logging.Logger
+
 import model._
 
 /**
@@ -23,6 +25,7 @@ class TondeuseService {
 				if(newCoordinates.x >= 0 && newCoordinates.y >= 0 && newCoordinates.x <= pelouse.superieurDroit.x && newCoordinates.y <= pelouse.superieurDroit.y)
 					inputTondeuse.copy(coordonnees = newCoordinates) else inputTondeuse
 			}
+			case _ => inputTondeuse
 		}
 	}
 	//Helper function to return the tuple of directions obtained by rotating the tondeuse 90 deg left and right from current direction
@@ -31,12 +34,14 @@ class TondeuseService {
 		case Direction.E => (Direction.N, Direction.S)
 		case Direction.S => (Direction.E, Direction.W)
 		case Direction.W => (Direction.S, Direction.N)
+		case _ => (currentDirection, currentDirection)
 	}
-	//Computes the new coordinates using the current coordiante and direction of tondeuse
+	//Helper function to compute the new coordinates using the current coordiante and direction of tondeuse
 	private def computeCoordinates(currentCoordinates: Coordonnees, currentDirection: Direction.Value): Coordonnees = currentDirection match {
 		case Direction.N => currentCoordinates.copy(y = currentCoordinates.y + 1)
 		case Direction.E => currentCoordinates.copy(x = currentCoordinates.x + 1)
 		case Direction.S => currentCoordinates.copy(y = currentCoordinates.y - 1)
 		case Direction.W => currentCoordinates.copy(x = currentCoordinates.x - 1)
+		case _ => currentCoordinates
 	}
 }
