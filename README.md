@@ -48,7 +48,7 @@ On attend le résultat suivant (position finale des tondeuses) :
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
 
-##Technical enviornment used
+##Technical environment used
 
     - Scala version 2.11
     - SBT(Scala build tool) version 0.13.8
