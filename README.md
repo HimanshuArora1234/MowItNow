@@ -2,38 +2,38 @@
 
 ##Problem definition
 
-La société MowItNow a décidé de développer une tondeuse à gazon automatique, destinée aux surfaces rectangulaires.La tondeuse peut être programmée pour parcourir l&#39;intégralité de la surface.La position de la tondeuse est représentée par une combinaison de coordonnées (x,y) et d&#39;une lettre indiquant l&#39;orientation selon la notation cardinale anglaise (N,E,W,S). La pelouse est divisée en grille pour simplifier la navigation.
+La sociÃ©tÃ© MowItNow a dÃ©cidÃ© de dÃ©velopper une tondeuse Ã  gazon automatique, destinÃ©e aux surfaces rectangulaires.La tondeuse peut Ãªtre programmÃ©e pour parcourir l&#39;intÃ©gralitÃ© de la surface.La position de la tondeuse est reprÃ©sentÃ©e par une combinaison de coordonnÃ©es (x,y) et d&#39;une lettre indiquant l&#39;orientation selon la notation cardinale anglaise (N,E,W,S). La pelouse est divisÃ©e en grille pour simplifier la navigation.
 
-Par exemple, la position de la tondeuse peut être « 0, 0, N », ce qui signifie qu&#39;elle se situe dans le coin inférieur gauche de la pelouse, et orientée vers le Nord.
+Par exemple, la position de la tondeuse peut Ãªtre Â« 0, 0, N Â», ce qui signifie qu&#39;elle se situe dans le coin infÃ©rieur gauche de la pelouse, et orientÃ©e vers le Nord.
 
-Pour contrôler la tondeuse, on lui envoie une séquence simple de lettres. Les lettres possibles sont « D », « G » et « A ». « D » et « G » font pivoter la tondeuse de 90° à droite ou à gauche respectivement, sans la déplacer. « A » signifie que l&#39;on avance la tondeuse d&#39;une case dans la direction à laquelle elle fait face, et sans modifier son orientation.
+Pour contrÃ´ler la tondeuse, on lui envoie une sÃ©quence simple de lettres. Les lettres possibles sont Â« D Â», Â« G Â» et Â« A Â». Â« D Â» et Â« G Â» font pivoter la tondeuse de 90Â° Ã  droite ou Ã  gauche respectivement, sans la dÃ©placer. Â« A Â» signifie que l&#39;on avance la tondeuse d&#39;une case dans la direction Ã  laquelle elle fait face, et sans modifier son orientation.
 
-Si la position après mouvement est en dehors de la pelouse, la tondeuse ne bouge pas,
+Si la position aprÃ¨s mouvement est en dehors de la pelouse, la tondeuse ne bouge pas,
 conserve son orientation et traite la commande suivante.
 
-On assume que la case directement au Nord de la position (x, y) a pour coordonnées (x, y+1).
+On assume que la case directement au Nord de la position (x, y) a pour coordonnÃ©es (x, y+1).
 
-Pour programmer la tondeuse, on lui fournit un fichier d&#39;entrée construit comme suit :
+Pour programmer la tondeuse, on lui fournit un fichier d&#39;entrÃ©e construit comme suit :
 
- - La première ligne correspond aux coordonnées du coin supérieur droit de la pelouse, celles du coin inférieur gauche sont supposées être (0,0)
+ - La premiÃ¨re ligne correspond aux coordonnÃ©es du coin supÃ©rieur droit de la pelouse, celles du coin infÃ©rieur gauche sont supposÃ©es Ãªtre (0,0)
 
- - La suite du fichier permet de piloter toutes les tondeuses qui ont été déployées. Chaque tondeuse a deux lignes la concernant :
+ - La suite du fichier permet de piloter toutes les tondeuses qui ont Ã©tÃ© dÃ©ployÃ©es. Chaque tondeuse a deux lignes la concernant :
 
-    - la première ligne donne la position initiale de la tondeuse, ainsi que son orientation. La position et l&#39;orientation sont fournies sous la forme de 2 chiffres et une lettre, séparés par un espace
+    - la premiÃ¨re ligne donne la position initiale de la tondeuse, ainsi que son orientation. La position et l&#39;orientation sont fournies sous la forme de 2 chiffres et une lettre, sÃ©parÃ©s par un espace
 
-    - la seconde ligne est une série d&#39;instructions ordonnant à la tondeuse d&#39;explorer la pelouse. Les instructions sont une suite de caractères sans espaces.
+    - la seconde ligne est une sÃ©rie d&#39;instructions ordonnant Ã  la tondeuse d&#39;explorer la pelouse. Les instructions sont une suite de caractÃ¨res sans espaces.
 
-Chaque tondeuse se déplace de façon séquentielle, ce qui signifie que la seconde tondeuse ne bouge que lorsque la première a exécuté intégralement sa série d&#39;instructions.
+Chaque tondeuse se dÃ©place de faÃ§on sÃ©quentielle, ce qui signifie que la seconde tondeuse ne bouge que lorsque la premiÃ¨re a exÃ©cutÃ© intÃ©gralement sa sÃ©rie d&#39;instructions.
 
-Lorsqu&#39;une tondeuse achève une série d&#39;instruction, elle communique sa position et son orientation.
+Lorsqu&#39;une tondeuse achÃ¨ve une sÃ©rie d&#39;instruction, elle communique sa position et son orientation.
 
 **OBJECTIF**
 
-Concevoir et écrire un programme s&#39;exécutant sur une JVM >= 1.7 ou un serveur node.js, et implémentant la spécification ci-dessus et passant le test ci-après
+Concevoir et Ã©crire un programme s&#39;exÃ©cutant sur une JVM >= 1.7 ou un serveur node.js, et implÃ©mentant la spÃ©cification ci-dessus et passant le test ci-aprÃ¨s
 
 TEST
 
-Le fichier suivant est fourni en entrée :
+Le fichier suivant est fourni en entrÃ©e :
 
 5 5<br/>
 1 2 N<br/>
@@ -41,12 +41,12 @@ GAGAGAGAA<br/>
 3 3 E<br/>
 AADAADADDA<br/>
 
-On attend le résultat suivant (position finale des tondeuses) :
+On attend le rÃ©sultat suivant (position finale des tondeuses) :
 
 1 3 N<br/>
 5 1 E
 
-NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
+NB: Les donnÃ©es en entrÃ©e peuvent Ãªtre injectÃ©e sous une autre forme qu&#39;un fichier (par exemple un test automatisÃ©).
 
 ##Technical enviornment used
 
@@ -74,6 +74,7 @@ To run this application:
         - sbt run 
           
 PS. `sbt run` will automatically find the `MowGuiRunner` object which is the ScalaFX GUI object to kick start this application.
+And there is a test case file at your disposal in `src/test/resources`.
 
 ##Output 
 
