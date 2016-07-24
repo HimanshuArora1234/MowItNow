@@ -48,9 +48,43 @@ On attend le résultat suivant (position finale des tondeuses) :
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu&#39;un fichier (par exemple un test automatisé).
 
-##Technical env used
+##Technical enviornment used
 
     - Scala version 2.11
     - SBT(Scala build tool) version 0.13.8
-    - Scalafx (GUI library based on JavaFx) version 8.0.92-R10
+    - ScalaFx (GUI library based on JavaFx) version 8.0.92-R10
+    - Junit version 4.8.1
+
+##How to run
+
+Before cloning and running MowItNow on your machine make sure:
+
+    1. You have a JDK8 installed on your machine
+    2. JAVA_HOME system variable pointing to JDK8
+    3. $JAVA_HOME\bin is present in your system path
+    4. You have SBT installed (if not then refer: http://www.scala-sbt.org/download.html)
+    5. SBT_installation_path\bin is present in your system path variable
+    6. You have GIT installed on your machine
+
+To run this application:
+
+    1. Clone this to your machine by using the follwong command
+        - git clone https://github.com/HimanshuArora1234/MowItNow.git
+    2. Once cloned run the following command on the root directory of project
+        - sbt run 
+          
+PS. `sbt run` will automatically find the `MowGuiRunner` object which is the ScalaFX GUI object to kick start this application.
+
+##Output 
+
+![Home screen](MainScreen.JPG)
+
+![Input file chooser screen](FileChooserScreen.JPG)
+
+![Output screen](OutputScreen1.JPG)
+
+![Output screen](OutputScreen2.JPG)
+
+    
+
     
