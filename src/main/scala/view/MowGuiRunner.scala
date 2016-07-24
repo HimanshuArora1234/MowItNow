@@ -41,10 +41,10 @@ object MowGuiRunner extends JFXApp {
 			val fileParseService = new ParsingService()
 			val tondeuseService = new TondeuseService()
 			val pelouse = fileParseService.getPelous(inputFile)
-			val tondeuses = fileParseService.getTondeuses(inputFile)
-			val commandes = fileParseService.getCommandes(inputFile)
 			pelouse match {
 				case Some(p) =>
+					val tondeuses = fileParseService.getTondeuses(inputFile)
+					val commandes = fileParseService.getCommandes(inputFile)
 					tondeuses.zipWithIndex.map {
 					case (tondeuse, index) if(commandes.length >= index + 1) => {
 						val movedTondeuse = commandes(index).foldLeft(tondeuse)((accumulator, command)  => tondeuseService.moveTondeuse(accumulator, p, command))
@@ -54,6 +54,11 @@ object MowGuiRunner extends JFXApp {
 							contentText = movedTondeuse.print
 						}.showAndWait
 					}
+					case (tondeuse, index) => new Alert(AlertType.Information) {
+						title = "Output"
+						headerText = "Position of tondeuse " + (index + 1)
+						contentText = tondeuse.print
+					}.showAndWait
 				}
 				case None => new Alert(AlertType.Error) {
 					title = "Error"

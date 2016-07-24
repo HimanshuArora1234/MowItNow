@@ -14,7 +14,7 @@ class ParsingService {
 		val input = Source.fromFile(file).getLines().toList
 		if(!input.isEmpty) {
 			val coordinateArray = input(0).split(" ")
-			if(coordinateArray.length < 2) None else Some(Pelouse(Coordonnees(coordinateArray(0).toInt, coordinateArray(1).toInt)))
+			if(coordinateArray.length != 2) None else Some(Pelouse(Coordonnees(coordinateArray(0).toInt, coordinateArray(1).toInt)))
 		} else None
 	}
 
