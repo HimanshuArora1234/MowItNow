@@ -5,7 +5,8 @@ import java.util.logging.Logger
 import model._
 
 /**
- * Created by arorah on 22/07/2016.
+ * Service class to perform operations on tondeuse.
+ * @author Himanshu Arora
  */
 class TondeuseService {
 	/**
@@ -21,7 +22,7 @@ class TondeuseService {
 			case Commande.D => inputTondeuse.copy(direction = leftRight(inputTondeuse.direction)._2)
 			case Commande.A => {
 				val newCoordinates = computeCoordinates(inputTondeuse.coordonnees, inputTondeuse.direction)
-				//Check if new coordinates are in the pelous
+				//Check if new coordinates are in the pelous otherwise conserving the original position
 				if(newCoordinates.x >= 0 && newCoordinates.y >= 0 && newCoordinates.x <= pelouse.superieurDroit.x && newCoordinates.y <= pelouse.superieurDroit.y)
 					inputTondeuse.copy(coordonnees = newCoordinates) else inputTondeuse
 			}

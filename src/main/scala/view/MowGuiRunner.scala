@@ -1,9 +1,7 @@
 package view
 
 
-import javax.smartcardio.CommandAPDU
-
-import model.{Tondeuse, Commande}
+import model.Tondeuse
 
 import scalafx.Includes._
 import scalafx.application.JFXApp
@@ -18,6 +16,7 @@ import scalafx.stage.FileChooser
 import service._
 /**
  * ScalaFX GUI object to run the MowItNow application.
+ * @author Himanshu Arora
  */
 object MowGuiRunner extends JFXApp {
 	stage = new JFXApp.PrimaryStage {
@@ -45,12 +44,12 @@ object MowGuiRunner extends JFXApp {
 					val tondeuses = fileParseService.getTondeuses(inputFile)
 					val commandes = fileParseService.getCommandes(inputFile)
 					tondeuses.zipWithIndex.map {
-					case (tondeuse, index) if(commandes.length >= index + 1) => {
+					case (tondeuse, index) if(commandes.length >= index + 1) => { //When there is a list of command for the tondeuse
 						val tondeuseService = new TondeuseService()
 						val movedTondeuse = commandes(index).foldLeft(tondeuse)((accumulator, command)  => tondeuseService.moveTondeuse(accumulator, pelouse, command))
 						GuiHelper.showPosition(movedTondeuse, index)
 					}
-					case (tondeuse, index) => GuiHelper.showPosition(tondeuse, index)
+					case (tondeuse, index) => GuiHelper.showPosition(tondeuse, index) //No command to be executed on the tondeuse
 				}
 				case None => new Alert(AlertType.Error) {
 					title = "Error"

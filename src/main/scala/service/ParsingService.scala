@@ -7,6 +7,7 @@ import model._
 
 /**
  * Input file parsing service.
+ * @author Himanshu Arora
  */
 class ParsingService {
 	//Parses the input file to retrieve the first line and to convert that into Pelous object.

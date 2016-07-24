@@ -1,6 +1,9 @@
 package model
 
 /**
- * Created by arorah on 22/07/2016.
+ * Coordinate data model.
+ * @param x X coordinate
+ * @param y Y coordinate
+ * @author Himanshu Arora
  */
 case class Coordonnees (x: Int, y: Int)
