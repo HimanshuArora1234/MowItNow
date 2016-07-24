@@ -48,21 +48,13 @@ object MowGuiRunner extends JFXApp {
 					tondeuses.zipWithIndex.map {
 					case (tondeuse, index) if(commandes.length >= index + 1) => {
 						val movedTondeuse = commandes(index).foldLeft(tondeuse)((accumulator, command)  => tondeuseService.moveTondeuse(accumulator, p, command))
-						new Alert(AlertType.Information) {
-							title = "Output"
-							headerText = "Position of tondeuse " + (index + 1)
-							contentText = movedTondeuse.print
-						}.showAndWait
+						GuiHelper.showPosition(movedTondeuse, index)
 					}
-					case (tondeuse, index) => new Alert(AlertType.Information) {
-						title = "Output"
-						headerText = "Position of tondeuse " + (index + 1)
-						contentText = tondeuse.print
-					}.showAndWait
+					case (tondeuse, index) => GuiHelper.showPosition(tondeuse, index)
 				}
 				case None => new Alert(AlertType.Error) {
 					title = "Error"
-					headerText = "No pelouse coodiantes found"
+					headerText = "No pelouse coordiantes found"
 					contentText = "Provide a valide input file"
 				}.showAndWait
 			}
@@ -70,4 +62,15 @@ object MowGuiRunner extends JFXApp {
 		}
 	}
 	rootPane.children.add(chooseLink)
+}
+
+object GuiHelper {
+	//Displays a Info dialog box containing the position of a tondeuse.
+	def showPosition(tondeuse: Tondeuse, index: Int) = {
+		new Alert(AlertType.Information) {
+			title = "Output"
+			headerText = "Final position of tondeuse " + (index + 1)
+			contentText = tondeuse.print
+		}.showAndWait
+	}
 }
