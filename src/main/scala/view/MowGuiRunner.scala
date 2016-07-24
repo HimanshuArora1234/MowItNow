@@ -39,15 +39,15 @@ object MowGuiRunner extends JFXApp {
 		val inputFile = fileChooser.showOpenDialog(stage)
 		if(inputFile != null) {
 			val fileParseService = new ParsingService()
-			val tondeuseService = new TondeuseService()
-			val pelouse = fileParseService.getPelous(inputFile)
-			pelouse match {
-				case Some(p) =>
+			val mayBePelouse = fileParseService.getPelous(inputFile)
+			mayBePelouse match {
+				case Some(pelouse) =>
 					val tondeuses = fileParseService.getTondeuses(inputFile)
 					val commandes = fileParseService.getCommandes(inputFile)
 					tondeuses.zipWithIndex.map {
 					case (tondeuse, index) if(commandes.length >= index + 1) => {
-						val movedTondeuse = commandes(index).foldLeft(tondeuse)((accumulator, command)  => tondeuseService.moveTondeuse(accumulator, p, command))
+						val tondeuseService = new TondeuseService()
+						val movedTondeuse = commandes(index).foldLeft(tondeuse)((accumulator, command)  => tondeuseService.moveTondeuse(accumulator, pelouse, command))
 						GuiHelper.showPosition(movedTondeuse, index)
 					}
 					case (tondeuse, index) => GuiHelper.showPosition(tondeuse, index)
